@@ -1,0 +1,1 @@
+AI resume builder - for studying AI integration in apps
