@@ -1,17 +1,14 @@
 import { auth } from "@/auth";
-import SignOutButton from "../components/SignOutButton";
+import SignOutButton from "../../components/SignOutButton";
 
 export default async function page() {
   const session = await auth();
 
   if (session?.user) {
     return (
-      <div>
-        <header>
-          <SignOutButton />
-        </header>
+      <section>
         <h1>Welcome back, {session.user.name}</h1>
-      </div>
+      </section>
     );
   }
 

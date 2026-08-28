@@ -6,7 +6,7 @@ import { signOut } from "next-auth/react";
 const SignOutButton = () => {
     
   return (
-    <button onClick={()=>signOut({callbackUrl:"/"})}>
+    <button className="text-xs cursor-pointer" onClick={()=>signOut({callbackUrl:"/"})}>
       Sign out
     </button>
   )
