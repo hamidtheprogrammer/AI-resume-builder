@@ -10,7 +10,7 @@ interface IUIcontext {
 
 const defaultUIContext = {
   showSignInModal: false,
-  setShowSignInModal:()=>{}
+  setShowSignInModal: () => {},
 };
 
 export const UIcontext = createContext<IUIcontext>(defaultUIContext);
