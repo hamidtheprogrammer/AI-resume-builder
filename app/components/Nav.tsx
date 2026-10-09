@@ -1,11 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 import { FaHome, FaBook, FaStar, FaPlusCircle } from "react-icons/fa";
 
-const navs = [
-  { name: "Home", link: "/builder", icon: <FaHome size={15} /> },
+export const navs = [
+  { name: "Home", link: "/home", icon: <FaHome size={15} /> },
   {
     name: "My resumes",
     link: "",
@@ -16,24 +15,25 @@ const navs = [
 ];
 
 const navlinkStyle =
-  "flex gap-3 items-center text-xs cursor-pointer h-12 rounded-md px-3 flex items-center";
+  "text-xs cursor-pointer h-12 rounded-md px-3 sm:max-lg:w-12 sm:max-lg:flex";
 
 const Nav = () => {
   const pathName = usePathname();
 
   return (
     <nav className="-translate-y-26">
-      <li></li>
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-3 sm:max-lg:items-center">
         {navs.map((n) => (
-          <Link
+          <li
+            key={n.name}
             className={`${navlinkStyle}  ${
-              pathName === n.link && "text-[#7549ED] bg-[#232039] border-l-1"
+              pathName === n.link && "text-[#7549ED] bg-[#232039] border-l-1 sm:max-lg:border-1"
             }`}
-            href={n.link}
           >
-            <>{n.icon}</> {n.name}
-          </Link>
+            <Link href={n.link} className="size-full flex items-center gap-3">
+              <>{n.icon}</> <span className="max-lg:hidden">{n.name}</span>
+            </Link>
+          </li>
         ))}
       </ul>
     </nav>

@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 export default async function Home() {
   const session = await auth();
   if (session?.user?.id) {
-    redirect("/builder");
+    redirect("/home");
   }
   return (
     <div className="relative size-full h-screen flex justify-center items-center">
